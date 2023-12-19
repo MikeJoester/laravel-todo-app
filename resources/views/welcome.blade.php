@@ -76,7 +76,7 @@
                   <div class="text-center">
                     <div class="block rounded-lg bg-[hsla(0,0%,100%,0.8)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[hsla(0,0%,15%,0.8)] dark:shadow-black/20 md:py-16 md:px-12"
                       style="
-                          margin-top: 180px;
+                          margin-top: 25%;
                           backdrop-filter: saturate(200%) blur(25px);
                         ">
                       <h1 class="mt-6 mb-16 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl text-white">
