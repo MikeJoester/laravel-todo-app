@@ -14,10 +14,10 @@
         <div class="sm:flex min-h-screen bg-center bg-gray-10 selection:bg-red-500 selection:text-slate-500">
             @if (Route::has('login'))
                 <nav class="sm:fixed z-10 flex flex-row justify-between w-full">
-                    <h2 class="sm:top-0 p-6 font-extrabold sm:text-2xl lg:text-5xl text-white">2DO</h2>
+                    <h2 class="sm:top-0 p-6 font-extrabold sm:text-2xl lg:text-5xl text-white select-none">2DO</h2>
                     <div class="sm:top-0 p-6 text-right sm:text-base lg:text-xl self-center text-slate-700">
                         @auth
-                            <a href="{{ url('/dashboard') }}" class="font-semibold hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Start Now</a>
+                            <a href="{{ url('/index') }}" class="font-semibold hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Start Now</a>
                         @else
                             <a href="{{ route('login') }}" class="font-semibold hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
 
