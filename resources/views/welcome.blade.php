@@ -10,19 +10,22 @@
 
         <!-- Styles -->
     </head>
-    <body class="flex flex-col">
+    <body>
         <div class="sm:flex min-h-screen bg-center bg-gray-10 selection:bg-red-500 selection:text-slate-500">
             @if (Route::has('login'))
-                <nav class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="font-semibold text-black hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Start Now</a>
-                    @else
-                        <a href="{{ route('login') }}" class="font-semibold text-black hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+                <nav class="sm:fixed z-10 flex flex-row justify-between w-full">
+                    <h2 class="sm:top-0 p-6 font-extrabold sm:text-2xl lg:text-5xl text-white">2DO</h2>
+                    <div class="sm:top-0 p-6 text-right sm:text-base lg:text-xl self-center text-slate-700">
+                        @auth
+                            <a href="{{ url('/dashboard') }}" class="font-semibold hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Start Now</a>
+                        @else
+                            <a href="{{ route('login') }}" class="font-semibold hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-black hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                        @endif
-                    @endauth
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}" class="ml-4 font-semibold hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+                            @endif
+                        @endauth
+                    </div>
                 </nav>
             @endif
 
@@ -72,11 +75,10 @@
                 <!-- Animated Background -->
 
                 <!-- Jumbotron -->
-                <div class="w-100 mx-auto px-6 sm:max-w-2xl md:max-w-3xl md:px-12 lg:max-w-5xl xl:max-w-7xl xl:px-32">
+                <div class="h-screen flex items-center justify-center mx-auto px-6 sm:max-w-xl md:max-w-3xl md:px-12 lg:max-w-5xl xl:max-w-7xl xl:px-32">
                   <div class="text-center">
                     <div class="block rounded-lg bg-[hsla(0,0%,100%,0.8)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[hsla(0,0%,15%,0.8)] dark:shadow-black/20 md:py-16 md:px-12"
                       style="
-                          margin-top: 25%;
                           backdrop-filter: saturate(200%) blur(25px);
                         ">
                       <h1 class="mt-6 mb-16 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl text-white">
