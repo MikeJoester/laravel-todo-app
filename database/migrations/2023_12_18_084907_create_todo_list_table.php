@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('todos', function (Blueprint $table) {
-            $table->id('task_id');
+            $table->id();
             $table->string('task_name');
-            $table->enum('status', ['open', 'done']);
-            $table->enum('priority', ['high', 'medium', 'low']);
+            $table->enum('status', ['open', 'done'])->default('open');
+            $table->enum('priority', ['high', 'medium', 'low'])->default('high');
             $table->unsignedBigInteger('category_id'); //foreign key
             $table->timestamps();
 
