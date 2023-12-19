@@ -92,8 +92,7 @@
                   </div>
                 </div>
                 <!-- Jumbotron -->
-              </section>
-              <!-- Section: Design Block -->
+            </section>
         </div>
     </body>
 </html>
