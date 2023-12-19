@@ -2,12 +2,6 @@
     <div class="py-12">
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
-                @if (Session::has('alert-success'))
-                    <div class="mb-4 rounded-lg bg-green-100 px-6 py-5 text-base text-green-700">
-                        {{Session::get('alert-success')}}
-                    </div>
-                @endif
-
                 @if ($errors->any())
                     <div class="mb-4 rounded-lg bg-red-100 px-6 py-5 text-base text-red-700">
                         <ul>
