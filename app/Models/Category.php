@@ -13,4 +13,9 @@ class Category extends Model
         'category_name',
         'category_description',
     ];
+
+    public function todos()
+    {
+        return $this->hasMany(Todo::class);
+    }
 }
