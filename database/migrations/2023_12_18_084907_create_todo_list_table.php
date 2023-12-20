@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('todos', function (Blueprint $table) {
             $table->id();
-            $table->string('task_name');
-            $table->enum('status', ['open', 'done'])->default('open');
-            $table->enum('priority', ['high', 'medium', 'low'])->default('high');
-            $table->unsignedBigInteger('category_id'); //foreign key
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('category_id')->nullable();
+            $table->string('todo');
+            $table->boolean('is_completed')->default(false);
             $table->timestamps();
 
-            //define relationship
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null');
         });
     }
 
