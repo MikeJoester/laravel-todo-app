@@ -2,10 +2,10 @@
     <div class="py-10">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="flex flex-row gap-3 mb-4">
-                <p class="font-bold text-3xl">Welcome to 2DO, create your Project / Category by clicking</p>
+                <p class="font-bold text-3xl">Create your new Task</p>
 
                 <a href="{{ route('category.create') }}">
-                    <x-primary-button class="px-5">{{ __('New Project') }}</x-primary-button>
+                    <x-primary-button class="px-5">{{ __('New Task') }}</x-primary-button>
                 </a>
             </div>
             @if (Session::has('alert-success'))
@@ -14,9 +14,9 @@
                 </div>
             @endif
             <section class="bg-white shadow-sm sm:rounded-lg p-6">
-                @if (count($categories) > 0)
+                @if (count($categoriesWithTasks) > 0)
                     <div class="grid grid-rows-2 grid-flow-col gap-5">
-                        @foreach ($categories as $cat)
+                        @foreach ($categoriesWithTasks as $cat)
                             <div class="flex flex-col gap-5 border-2 border-slate-400 p-3 rounded-md max-w-xl">
                                 <div class="flex flex-row gap-5">
                                     <div class="flex flex-col gap-2 w-1/2">
@@ -38,17 +38,26 @@
 
                                 <div class="flex flex-row justify-between">
                                     <h2 class="font-bold text-xl self-center">Task List</h2>
-                                    <a href="{{ route('category.task-list') }}">
-                                        <x-primary-button class="">
-                                            {{ __('View Task List') }}
-                                        </x-primary-button>
-                                    </a>
+                                    <x-primary-button class="">
+                                        {{ __('Add Task') }}
+                                    </x-primary-button>
+
+                                    @if (count($categoriesWithTasks) > 0)
+                                        {{-- @foreach ($categoriesWithTasks as $category)
+                                            <h2>{{ $category->category_name }}</h2>
+                                            <ul>
+                                                @foreach ($category->tasks as $task)
+                                                    <li>{{ $task->task_name }}</li>
+                                                @endforeach
+                                            </ul>
+                                        @endforeach --}}
+                                    @endif
                                 </div>
                             </div>
                         @endforeach
                     </div>
                 @else
-                    <h4>No Categories around!</h4>
+                    <h4>No Tasks available, try to create one</h4>
                 @endif
             </section>
         </div>
