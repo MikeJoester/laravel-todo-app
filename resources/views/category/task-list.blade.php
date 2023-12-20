@@ -21,7 +21,7 @@
                                 <div class="flex flex-row gap-5">
                                     <div class="flex flex-col gap-2 w-1/2">
                                         <h2 class="font-bold text-2xl">{{$cat->category_name}}</h2>
-                                        <span class="truncate max-w-[20ch]">{{$cat->category_description}}</span>
+                                        <span class="truncate max-w-[20ch]">desc</span>
                                     </div>
 
                                     <div class="flex flex-col self-center text-center w-1/2">

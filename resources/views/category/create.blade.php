@@ -22,12 +22,12 @@
 
                     <!-- Category Description -->
                     <div class="mt-4">
-                        <x-input-label for="textarea" :value="__('Category Description')" class="text-xl"/>
+                        <x-input-label for="textarea" :value="__('Color')" class="text-xl"/>
 
                         <textarea id="textarea" class="block mt-1 w-full p-2 border-2 bg-gray-50"
                                         type="text"
                                         rows="5" cols="5"
-                                        name="category_description"></textarea>
+                                        name="color"></textarea>
 
                         {{-- <x-input-error :messages="$errors->get('password')" class="mt-2" /> --}}
                     </div>

@@ -5,7 +5,7 @@
                 <p class="font-bold text-3xl">Welcome to 2DO, create your Project / Category by clicking</p>
 
                 <a href="{{ route('category.create') }}">
-                    <x-primary-button class="px-5">{{ __('New Project') }}</x-primary-button>
+                    <x-primary-button class="px-5">{{ __('New Category') }}</x-primary-button>
                 </a>
             </div>
             @if (Session::has('alert-success'))
@@ -53,4 +53,5 @@
             </section>
         </div>
     </div>
+    {{-- @include('category.task-list') --}}
 </x-app-layout>

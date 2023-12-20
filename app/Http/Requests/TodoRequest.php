@@ -23,7 +23,7 @@ class TodoRequest extends FormRequest
     {
         return [
             'category_name'=>'required|string',
-            'category_description'=>'required|string|min:5|max:65535'
+            'color'=>'required'
         ];
     }
 }

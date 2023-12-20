@@ -33,7 +33,5 @@ Route::get('category/create', [TodoController::class, 'create'])->name('category
 Route::get('category/index', [TodoController::class, 'index'])->name('category.index');
 Route::patch('category/update', [TodoController::class, 'update'])->name('category.update');
 Route::post('category/add', [TodoController::class, 'add'])->name('category.add');
-Route::get('category/tasklist', [TodoController::class, 'tasklist'])->name('category.task-list');
-Route::post('category/{categoryId}/task', [TodoController::class, 'store']);
 
 require __DIR__.'/auth.php';

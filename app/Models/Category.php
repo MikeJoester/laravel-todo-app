@@ -9,13 +9,18 @@ class Category extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function todos()
     {
         return $this->hasMany(Todo::class);
     }
 
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+
     protected $fillable = [
         'category_name',
-        'category_description',
     ];
 }
