@@ -38,9 +38,9 @@
 
                                 <div class="flex flex-row justify-between">
                                     <h2 class="font-bold text-xl self-center">Task List</h2>
-                                    <a href="{{ route('category.task-list') }}">
+                                    <a href="#">
                                         <x-primary-button class="">
-                                            {{ __('View Task List') }}
+                                            {{ __('Add Task') }}
                                         </x-primary-button>
                                     </a>
                                 </div>
