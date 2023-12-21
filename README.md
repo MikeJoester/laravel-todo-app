@@ -32,4 +32,4 @@ and on the new shell, we also run:
 npm run dev
 ```
 
-And the web is available on [172.0.0.1:8000](172.0.0.1:8000), which is similar to this:
+And the web is available on `'127.0.0.1:8000'`, which is similar to this:
