@@ -15,9 +15,22 @@ class TodoController extends Controller
     {
         $userId = Auth::id();
         $categories = Category::where('user_id', $userId)->get();
+        $categoriesWithTasks = [];
 
+        foreach ($categories as $category) {
+            $tasks = $category->todos;
+            $categoriesWithTasks[] = [
+                'category' => $category,
+                'tasks' => $tasks,
+            ];
+        }
+
+        // return view('category.index', [
+        //     'categories' => $categories,
+        //     'tasks' => $tasklist
+        // ]);
         return view('category.index', [
-            'categories'=>$categories,
+            'categoriesWithTasks' => $categoriesWithTasks,
         ]);
     }
 
@@ -76,36 +89,37 @@ class TodoController extends Controller
             ->firstOrFail();
 
         // Delete the category and its associated tasks
-        $category->tasks()->delete();
+        $category->todos()->delete();
         $category->delete();
 
         // Return a response indicating success
         return response()->json(['message' => 'Category deleted successfully']);
     }
 
-    public function getCategoryTasks($categoryId)
-    {
-        // Get the authenticated user's ID
-        $userId = Auth::id();
+    // public function getCategoryTasks($categoryId)
+    // {
+    //     // Get the authenticated user's ID
+    //     $userId = Auth::id();
 
-        // Check if the category belongs to the authenticated user
-        $category = Category::where('id', $categoryId)
-            ->where('user_id', $userId)
-            ->firstOrFail();
+    //     // Check if the category belongs to the authenticated user
+    //     $category = Category::where('id', $categoryId)
+    //         ->where('user_id', $userId)
+    //         ->firstOrFail();
 
-        // Get all tasks for the specified category
-        $tasks = $category->tasks;
+    //     // Get all tasks for the specified category
+    //     $tasks = $category->tasks;
 
-        // Return the tasks
-        return response()->json(['tasks' => $tasks]);
-    }
+    //     // Return the tasks
+    //     // return response()->json(['tasks' => $tasks]);
+    //     return view('category.index', ['tasks' => $tasks]);
+    // }
 
     public function addTask(Request $request, $categoryId)
     {
         // Validate the request
         $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'nullable|string',
+            'task_name' => 'required|string|max:255',
+            'priority' => 'required'
         ]);
 
         // Get the authenticated user's ID
@@ -118,14 +132,16 @@ class TodoController extends Controller
 
         // Create a new task for the category
         $task = new Todo([
-            'name' => $request->input('name'),
-            'description' => $request->input('description'),
+            'name' => $request->task_name,
+            'priority' => $request->priority,
         ]);
 
         // Save the task to the category
-        $category->tasks()->save($task);
+        $category->todos()->save($task);
 
         // Return a response indicating success
-        return response()->json(['message' => 'Task added successfully']);
+        // return response()->json(['message' => 'Task added successfully']);
+        $request->session()->flash('alert-success', 'Task created!');
+        return to_route('category.index');
     }
 }
