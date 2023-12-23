@@ -5,14 +5,14 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('index') }}">
+                    <a href="{{ route('category.index') }}">
                         <x-application-logo class="sm:top-0 p-6 font-extrabold sm:text-2xl lg:text-4xl text-black"/>
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('index')" :active="request()->routeIs('index')">
+                    <x-nav-link :href="route('category.index')" :active="request()->routeIs('category.index')">
                         {{ __('Home') }}
                     </x-nav-link>
                 </div>
@@ -67,7 +67,7 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('index')" :active="request()->routeIs('index')">
+            <x-responsive-nav-link :href="route('category.index')" :active="request()->routeIs('category.index')">
                 {{ __('index') }}
             </x-responsive-nav-link>
         </div>
