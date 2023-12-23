@@ -8,6 +8,7 @@
                     <x-primary-button class="px-5">{{ __('New Category') }}</x-primary-button>
                 </a>
             </div>
+            @livewire('category-filter')
             @if (Session::has('alert-success'))
                 <div class="mb-4 rounded-lg bg-green-100 px-6 py-5 text-base text-green-700">
                     {{Session::get('alert-success')}}
