@@ -8,20 +8,20 @@
                     <x-primary-button class="px-5">{{ __('New Category') }}</x-primary-button>
                 </a>
             </div>
+            @livewire('category-filter')
             @if (Session::has('alert-success'))
                 <div class="mb-4 rounded-lg bg-green-100 px-6 py-5 text-base text-green-700">
                     {{Session::get('alert-success')}}
                 </div>
             @endif
             <section class="bg-white shadow-sm sm:rounded-lg p-6">
-                @if (count($categories) > 0)
+                @if (count($categoriesWithTasks) > 0)
                     <div class="grid grid-rows-2 grid-flow-col gap-5">
-                        @foreach ($categories as $cat)
+                        @foreach ($categoriesWithTasks as $categoryWithTasks)
                             <div class="flex flex-col gap-5 border-2 border-slate-400 p-3 rounded-md max-w-xl">
                                 <div class="flex flex-row gap-5">
                                     <div class="flex flex-col gap-2 w-1/2">
-                                        <h2 class="font-bold text-2xl">{{$cat->category_name}}</h2>
-                                        <span class="truncate max-w-[20ch]">{{$cat->category_description}}</span>
+                                        <h2 class="font-bold text-2xl">{{$categoryWithTasks['category']->category_name}}</h2>
                                     </div>
 
                                     <div class="flex flex-col self-center text-center w-1/2">
@@ -35,15 +35,8 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="flex flex-row justify-between">
-                                    <h2 class="font-bold text-xl self-center">Task List</h2>
-                                    <a href="#">
-                                        <x-primary-button class="">
-                                            {{ __('Add Task') }}
-                                        </x-primary-button>
-                                    </a>
-                                </div>
+                                @include('category.add-task')
+                                @include('category.task-view')
                             </div>
                         @endforeach
                     </div>
