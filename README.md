@@ -72,6 +72,7 @@ Laravel Pulse delivers at-a-glance insights into your application's performance 
 ![image](https://github.com/MikeJoester/laravel-todo-app/assets/74175443/47962ab6-a5d1-4302-baa0-55654ae3b84d)
 
 ### Main Functions:
+The main functions are displayed in the demo video above. Here is some screenshots about all of the functions in the video:
 #### Login and Register:
 #### Add Tasks:
 #### View Tasks:
