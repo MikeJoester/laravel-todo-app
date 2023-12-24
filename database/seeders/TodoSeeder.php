@@ -16,14 +16,13 @@ class TodoSeeder extends Seeder
     public function run(): void
     {
         $faker = Faker::create();
-        for ($i = 1; $i <= 4; $i++) {
-            $categoryId = DB::table('categories')->where('category_name', "Category $i")->value('id');
-
-            for ($j = 1; $j <= 3; $j++) {
+        for ($i = 1; $i <= 5; $i++) {
+            for ($j = 1; $j <= 4; $j++) {
                 DB::table('todos')->insert([
-                    'category_id' => $categoryId,
-                    'name' => $faker->catchPhrase,
-                    'priority' => "medium",
+                    'user_id' => $i,
+                    'title' => $faker->catchPhrase,
+                    'description' => $faker->sentence(),
+                    'is_completed' => false,
                 ]);
             }
         }
