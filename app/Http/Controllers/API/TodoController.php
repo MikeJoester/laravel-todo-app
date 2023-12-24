@@ -71,9 +71,12 @@ class TodoController extends Controller
 
     public function edit(Todo $todo)
     {
+        $userId = Auth::id();
+        $categories = Category::where('user_id', $userId)->get();
+
         $this->authorize('update', $todo);
 
-        return view('todos.edit', compact('todo'));
+        return view('todos.edit', compact('todo', 'categories'));
     }
 
     public function update(TodoRequest $request, Todo $todo)

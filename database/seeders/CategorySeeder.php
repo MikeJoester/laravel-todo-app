@@ -15,11 +15,12 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
+        $faker = Faker::create();
         for ($i = 1; $i <= 5; $i++) {
             for ($j = 1; $j <= 4; $j++) {
                 DB::table('categories')->insert([
                     'user_id' => $i,
-                    'category_name' => "Category $j",
+                    'category_name' => $faker->word,
                 ]);
             }
         }
