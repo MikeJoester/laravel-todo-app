@@ -52,7 +52,7 @@ npm run dev
 ```
 ## Features
 And the web is available on `127.0.0.1:8000`, which is similar to this demo video below:
-https://github.com/MikeJoester/laravel-todo-app/assets/74175443/8d9a18ae-fe5a-4e70-a1b4-a151516a7d08
+![video](https://github.com/MikeJoester/laravel-todo-app/assets/74175443/8d9a18ae-fe5a-4e70-a1b4-a151516a7d08)
 
 ### Database Structure
 The main database consists of two main table: User and Todos, linked together by user_id and id value
