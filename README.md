@@ -52,6 +52,7 @@ npm run dev
 ```
 ## Features
 And the web is available on `127.0.0.1:8000`, which is similar to this demo video below:
+https://github.com/MikeJoester/laravel-todo-app/assets/74175443/8d9a18ae-fe5a-4e70-a1b4-a151516a7d08
 
 ### Database Structure
 The main database consists of two main table: User and Todos, linked together by user_id and id value
@@ -74,8 +75,16 @@ Laravel Pulse delivers at-a-glance insights into your application's performance 
 ### Main Functions:
 The main functions are displayed in the demo video above. Here is some screenshots about all of the functions in the video:
 #### Login and Register:
-#### Add Tasks:
-#### View Tasks:
-#### Edit Tasks:
-#### Delete Tasks:
+![Animation1](https://github.com/MikeJoester/laravel-todo-app/assets/74175443/612e0270-25bd-4745-aea2-a541676f1726)
 
+#### Add Tasks:
+![Animation2](https://github.com/MikeJoester/laravel-todo-app/assets/74175443/fdca5fda-1eef-4335-bf45-70e94e1e80d0)
+
+#### View Tasks:
+![image](https://github.com/MikeJoester/laravel-todo-app/assets/74175443/4f217f16-ebfc-41b1-9247-b3b11c1216c5)
+
+#### Edit Tasks:
+![Animation3](https://github.com/MikeJoester/laravel-todo-app/assets/74175443/8453177a-5ec3-43cd-96f3-d65d70acd928)
+
+#### Delete Tasks:
+![AnimationDelete](https://github.com/MikeJoester/laravel-todo-app/assets/74175443/da28a888-14f3-484d-9a86-c3638c49c680)
