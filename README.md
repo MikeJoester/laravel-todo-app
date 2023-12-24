@@ -53,7 +53,8 @@ npm run dev
 ## Features
 And the web is available on `127.0.0.1:8000`, which is similar to this demo video below:
 
-https://github.com/MikeJoester/laravel-todo-app/assets/74175443/8991cf0f-0127-4cd8-8bc7-8f2231544217
+https://github.com/MikeJoester/laravel-todo-app/assets/74175443/26430757-fa25-4d4b-b92e-8ce5ce8e05bb
+
 
 ### Database Structure
 The main database consists of two main table: User and Todos, linked together by user_id and id value
@@ -78,13 +79,29 @@ The main functions are displayed in the demo video above. Here is some screensho
 ![Animation1](https://github.com/MikeJoester/laravel-todo-app/assets/74175443/612e0270-25bd-4745-aea2-a541676f1726)
 
 #### Add Tasks:
-![Animation2](https://github.com/MikeJoester/laravel-todo-app/assets/74175443/fdca5fda-1eef-4335-bf45-70e94e1e80d0)
+![CreateTodo](https://github.com/MikeJoester/laravel-todo-app/assets/74175443/2dace0c2-51f0-4788-8ef0-b61fe39e464c)
 
 #### View Tasks:
-![image](https://github.com/MikeJoester/laravel-todo-app/assets/74175443/4f217f16-ebfc-41b1-9247-b3b11c1216c5)
+![ViewTodo](https://github.com/MikeJoester/laravel-todo-app/assets/74175443/243c513f-4886-4eb7-8a52-9f87f38de84e)
 
 #### Edit Tasks:
-![Animation3](https://github.com/MikeJoester/laravel-todo-app/assets/74175443/8453177a-5ec3-43cd-96f3-d65d70acd928)
+![EditTodo](https://github.com/MikeJoester/laravel-todo-app/assets/74175443/9b2b124d-6e81-4037-bee0-970fad4fd658)
 
 #### Delete Tasks:
-![AnimationDelete](https://github.com/MikeJoester/laravel-todo-app/assets/74175443/da28a888-14f3-484d-9a86-c3638c49c680)
+![DeleteTodo](https://github.com/MikeJoester/laravel-todo-app/assets/74175443/08d6d69f-2494-4542-a89e-7212ef1c6c9a)
+
+#### Search Tasks:
+![SearchTodo](https://github.com/MikeJoester/laravel-todo-app/assets/74175443/c4afdd08-9c45-4134-bf9c-53b1d63823d1)
+
+#### Add Category:
+![CreateCat](https://github.com/MikeJoester/laravel-todo-app/assets/74175443/38371b3a-64fb-45f3-9fa7-bf8587919a8b)
+
+#### View Categories:
+![image](https://github.com/MikeJoester/laravel-todo-app/assets/74175443/443fdfa2-d984-4f5b-9cd7-35b89674b12a)
+
+#### Delete Categories:
+![DeleteCat](https://github.com/MikeJoester/laravel-todo-app/assets/74175443/ee01e57a-54aa-4f32-a147-f135fe637050)
+
+#### Sort by Categories:
+![FilterCat](https://github.com/MikeJoester/laravel-todo-app/assets/74175443/4d9ab400-fdba-45d6-8711-18e17b672c41)
+
