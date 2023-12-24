@@ -57,8 +57,10 @@ https://github.com/MikeJoester/laravel-todo-app/assets/74175443/26430757-fa25-4d
 
 
 ### Database Structure
-The main database consists of two main table: User and Todos, linked together by user_id and id value
-![image](https://github.com/MikeJoester/laravel-todo-app/assets/74175443/99e13518-3a43-4bd6-b5bf-64f6b9cc2868)
+The main database consists of three main table: User, Todos and Categories
+![image](https://github.com/MikeJoester/laravel-todo-app/assets/74175443/e623fb33-346a-402a-bc23-4ef0efdb26ac)
+
+
 
 ### Create documentation with Scramble
 Scramble generates API documentation for Laravel project. Without requiring you to manually write PHPDoc annotations. Docs are generated in OpenAPI 3.1.0 format.
