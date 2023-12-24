@@ -4,7 +4,7 @@ Advanced Web Development - Final Project
 ## Overview
 This is a simple Todo web application created by Nguyen The Dan in the final project of the Advanced Web Development Course
 
-##Technology
+## Technology
 This project requires [PHP 8.2](https://windows.php.net/download#php-8.2) or later to run.
 Packages used in this project:
 - [Laravel Breeze & Blade](https://laravel.com/docs/10.x/starter-kits#breeze-and-blade) for the front end and basic authorization
