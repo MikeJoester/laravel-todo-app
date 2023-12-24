@@ -47,8 +47,13 @@ class User extends Authenticatable
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-     function todos()
+    function todos()
     {
         return $this->hasMany(Todo::class);
+    }
+
+    function categories()
+    {
+        return $this->hasMany(Category::class);
     }
 }

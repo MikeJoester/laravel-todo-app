@@ -20,11 +20,18 @@
             @endif
             <div class="flex flex-row gap-3 mb-4">
                 <p class="font-bold text-3xl">Welcome to 2DO, create your Project / Category by clicking</p>
+                <a href="{{ route('categories.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Create Category
+                </a>
+            </div>
+            <div class="flex flex-row gap-3 mb-4">
+                <p class="font-bold text-3xl">Welcome to 2DO, create your Task by clicking</p>
                 <a href="{{ route('todos.create') }}" class="bg-slate-500 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-md">
                     Create Todo
                 </a>
             </div>
-            <div class="flex justify-start items-center py-5">
+
+            <div class="flex flex-col justify-start py-5">
                 <form action="{{route('todos.index')}}" method="GET" class="flex items-center gap-3">
                     @csrf
                     <label for="search" class="font-semibold text-xl">Search for task name here: </label>
@@ -32,6 +39,21 @@
                     <button type="submit" class="bg-slate-500 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-md ml-2">
                         Search
                     </button>
+                </form>
+
+                <form action="{{ route('todos.index') }}" method="GET" class="py-5 flex flex-row gap-3">
+                    <label class="font-semibold text-xl self-center">Filter by Categories:</label>
+                    @foreach($categories as $category)
+                    <div class="self-center ">
+                        <input
+                            type="checkbox"
+                            name="filter_categories[]"
+                            value="{{ $category->category_name }}" {{ in_array($category->category_name, (array)request('filter_categories')) ? 'checked' : '' }}
+                        >
+                        {{ $category->category_name }}
+                    </div>
+                    @endforeach
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-2">Apply Filter</button>
                 </form>
             </div>
 
@@ -48,8 +70,12 @@
                             Completion
                         </th>
                         <th scope="col" class="px-6 py-3 border border-gray-500">
+                            Category
+                        </th>
+                        <th scope="col" class="px-6 py-3 border border-gray-500">
                             Action
                         </th>
+
                     </tr>
                 </thead>
                 @if(count($todos) > 0)
@@ -57,6 +83,7 @@
                 @else
                 <h1 class="text-2xl">No todos match the search criteria</h1>
                 @endif
+
                 @if(count($todos)>0)
                 <tbody class="border border-gray-500 text-md">
                     @foreach ($todos as $todo)
@@ -70,6 +97,9 @@
                             <p class="text-rose-700 text-center font-semibold">Not Yet</p>
                             @endif
                         </td>
+
+                        <td class="border border-gray-500 text-center font-semibold"> {{ $todo->category ? $todo->category->category_name : 'Uncategorized' }}</td>
+
                         <td class="p-3 flex flex-row gap-3 justify-center">
                             <a class="text-blue-700 hover:bg-blue-300 border-2 border-blue-700 self-center px-3 py-1 rounded-md" href="{{ route('todos.show', $todo->id) }}">View</a>
                             <a class="text-slate-800 px-3 py-1 self-center border-2 hover:bg-slate-300 border-slate-800 rounded-md" href="{{ route('todos.edit', $todo->id) }}">Edit</a>
@@ -79,7 +109,6 @@
                                 <input type="hidden" name="todo_id" value="{{ $todo->id }}">
                                 <input type="submit" class=" cursor-pointer p-3 text-rose-800 px-3 py-1 self-center border-2 hover:bg-rose-300 border-rose-800 rounded-md" value="Delete">
                             </form>
-
                         </td>
                     </tr>
 
