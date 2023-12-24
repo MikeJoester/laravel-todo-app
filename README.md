@@ -52,12 +52,12 @@ npm run dev
 ```
 ## Features
 And the web is available on `127.0.0.1:8000`, which is similar to this demo video below:
-![video](https://github.com/MikeJoester/laravel-todo-app/assets/74175443/8d9a18ae-fe5a-4e70-a1b4-a151516a7d08)
+
+https://github.com/MikeJoester/laravel-todo-app/assets/74175443/8991cf0f-0127-4cd8-8bc7-8f2231544217
 
 ### Database Structure
 The main database consists of two main table: User and Todos, linked together by user_id and id value
 ![image](https://github.com/MikeJoester/laravel-todo-app/assets/74175443/99e13518-3a43-4bd6-b5bf-64f6b9cc2868)
-
 
 ### Create documentation with Scramble
 Scramble generates API documentation for Laravel project. Without requiring you to manually write PHPDoc annotations. Docs are generated in OpenAPI 3.1.0 format.
